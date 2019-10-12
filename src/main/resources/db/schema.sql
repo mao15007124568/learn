@@ -1,4 +1,4 @@
-SET NAMES utf8;
+﻿SET NAMES utf8;
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -35,5 +35,11 @@ DROP TABLE IF EXISTS `llz`;
 CREATE TABLE `llz` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `llzname` varchar(100) DEFAULT NULL comment 'llz name',
+  PRIMARY KEY (`id`)
+);
+DROP TABLE IF EXISTS `zzs`;
+CREATE TABLE `zzs` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `llzname` varchar(100) DEFAULT NULL comment 'zzs name',
   PRIMARY KEY (`id`)
 );
