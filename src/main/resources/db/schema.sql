@@ -13,6 +13,12 @@ CREATE TABLE `user` (
   `avatar_url` varchar(200) DEFAULT '' comment '头像',
   PRIMARY KEY (`id`)
 );
+CREATE TABLE `letter` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL comment '标题',
+  `content` varchar(500) DEFAULT NULL comment '内容',
+  PRIMARY KEY (`id`)
+);
 ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
