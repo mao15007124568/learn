@@ -30,3 +30,10 @@ CREATE TABLE `file` (
   `filename` varchar(100) DEFAULT NULL comment 'file name',
   PRIMARY KEY (`id`)
 );
+
+DROP TABLE IF EXISTS `llz`;
+CREATE TABLE `llz` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `llzname` varchar(100) DEFAULT NULL comment 'llz name',
+  PRIMARY KEY (`id`)
+);
