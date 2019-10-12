@@ -1,4 +1,4 @@
-# 学习指引aaaabbbcccddd
+# 学习指导
 
 ### 启动
 
