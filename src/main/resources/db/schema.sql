@@ -16,3 +16,11 @@ CREATE TABLE `user` (
 ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
+
+
+DROP TABLE IF EXISTS `file`;
+CREATE TABLE `file` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(100) DEFAULT NULL comment 'file name',
+  PRIMARY KEY (`id`)
+);
