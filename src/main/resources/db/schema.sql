@@ -16,7 +16,7 @@ CREATE TABLE `user` (
 CREATE TABLE `letter` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) DEFAULT NULL comment '标题',
-  `content` varchar(500) DEFAULT NULL comment '内容',
+  `content` varchar(500) DEFAULT NULL comment '内容11',
   PRIMARY KEY (`id`)
 );
 ALTER TABLE `user` ADD UNIQUE (`username`);
