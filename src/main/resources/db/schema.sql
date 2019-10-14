@@ -33,12 +33,12 @@ CREATE TABLE `file` (
   PRIMARY KEY (`id`)
 );
 
-DROP TABLE IF EXISTS `llz`;
-CREATE TABLE `llz` (
+
+DROP TABLE IF EXISTS `food`;
+CREATE TABLE `food` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `llzname` varchar(100) DEFAULT NULL comment 'llzname',
-  `llzpassword` varchar(100) DEFAULT NULL comment 'llzpassword',
-  `llzemail` varchar(100) DEFAULT NULL comment 'llzemail',
-  `llzphone` varchar(100) DEFAULT NULL comment 'llzphone',
+  `food_name` varchar(100) DEFAULT NULL comment 'food_name',
+  `food_type` varchar(100) DEFAULT NULL comment 'food_type',
+  `food_price` float DEFAULT NULL comment 'food_price',
   PRIMARY KEY (`id`)
 );

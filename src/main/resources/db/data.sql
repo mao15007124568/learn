@@ -16,5 +16,8 @@ INSERT INTO `course` (id, cname) VALUES ('1','高数');
 INSERT INTO `course` (id, cname)  VALUES ('2','英语');
 INSERT INTO `course` (id, cname)  VALUES ('3','移动通信');
 
-INSERT INTO `llz` (llzname, llzpassword, llzemail, llzphone) VALUES ('llz','123456', '2375685919@qq.com', '13995953370');
+
+INSERT INTO `food` (food_name,food_type,food_price)  VALUES ('文昌鸡','粤菜',18.8);
+INSERT INTO `food` (food_name,food_type,food_price)  VALUES ('砂锅鳙鱼头','湘菜',20.4);
+INSERT INTO `food` (food_name,food_type,food_price)  VALUES ('辣子鸡丁','川菜',38.8);
 COMMIT;
