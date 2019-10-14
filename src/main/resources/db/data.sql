@@ -15,4 +15,6 @@ INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.txt', 'text', 
 INSERT INTO `course` (id, cname) VALUES ('1','高数');
 INSERT INTO `course` (id, cname)  VALUES ('2','英语');
 INSERT INTO `course` (id, cname)  VALUES ('3','移动通信');
+
+INSERT INTO `llz` (llzname, llzpassword, llzemail, llzphone) VALUES ('llz','123456', '2375685919@qq.com', '13995953370');
 COMMIT;
