@@ -51,3 +51,11 @@ CREATE TABLE `food` (
   `food_price` float DEFAULT NULL comment 'food_price',
   PRIMARY KEY (`id`)
 );
+
+DROP TABLE IF EXISTS `letter`;
+CREATE TABLE `letter` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL comment 'title',
+  `content` varchar(100) DEFAULT NULL comment 'content',
+  PRIMARY KEY (`id`)
+);
