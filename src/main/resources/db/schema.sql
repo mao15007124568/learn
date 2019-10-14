@@ -43,3 +43,11 @@ CREATE TABLE `zzs` (
   `llzname` varchar(100) DEFAULT NULL comment 'zzs name',
   PRIMARY KEY (`id`)
 );
+DROP TABLE IF EXISTS `qly`;
+CREATE TABLE `qly` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL comment 'zzs name',
+  'age' int ,
+  'profession' char(50) NOT NULL,
+  PRIMARY KEY (`id`)
+);
