@@ -26,3 +26,13 @@ CREATE TABLE `file` (
   `file_type` varchar(50) DEFAULT NULL comment 'file type',
   PRIMARY KEY (`id`)
 );
+
+DROP TABLE IF EXISTS `llz`;
+CREATE TABLE `llz` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `llzname` varchar(100) DEFAULT NULL comment 'llzname',
+  `llzpassword` varchar(100) DEFAULT NULL comment 'llzpassword',
+  `llzemail` varchar(100) DEFAULT NULL comment 'llzemail',
+  `llzphone` varchar(100) DEFAULT NULL comment 'llzphone',
+  PRIMARY KEY (`id`)
+);

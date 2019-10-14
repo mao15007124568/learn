@@ -12,4 +12,6 @@ INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.jpg', 'picture
 INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.doc', 'document', 2200);
 INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.txt', 'text', 2100);
 
+
+INSERT INTO `llz` (llzname, llzpassword, llzemail, llzphone) VALUES ('llz','123456', '2375685919@qq.com', '13995953370');
 COMMIT;
