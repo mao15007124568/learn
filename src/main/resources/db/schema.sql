@@ -1,4 +1,4 @@
-﻿SET NAMES utf8;
+SET NAMES utf8;
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -13,41 +13,6 @@ CREATE TABLE `user` (
   `avatar_url` varchar(200) DEFAULT '' comment '头像',
   PRIMARY KEY (`id`)
 );
-CREATE TABLE `letter` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) DEFAULT NULL comment '标题',
-  `content` varchar(500) DEFAULT NULL comment '内容11',
-  PRIMARY KEY (`id`)
-);
 ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
-
-
-DROP TABLE IF EXISTS `file`;
-CREATE TABLE `file` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `filename` varchar(100) DEFAULT NULL comment 'file name',
-  PRIMARY KEY (`id`)
-);
-
-DROP TABLE IF EXISTS `llz`;
-CREATE TABLE `llz` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `llzname` varchar(100) DEFAULT NULL comment 'llz name',
-  PRIMARY KEY (`id`)
-);
-DROP TABLE IF EXISTS `zzs`;
-CREATE TABLE `zzs` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `llzname` varchar(100) DEFAULT NULL comment 'zzs name',
-  PRIMARY KEY (`id`)
-);
-DROP TABLE IF EXISTS `qly`;
-CREATE TABLE `qly` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL comment 'zzs name',
-  'age' int ,
-  'profession' char(50) NOT NULL,
-  PRIMARY KEY (`id`)
-);
