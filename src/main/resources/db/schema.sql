@@ -17,6 +17,7 @@ ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -24,5 +25,14 @@ CREATE TABLE `student` (
   `sdept` varchar(255) DEFAULT NULL  comment '专业',
   `ssex` varchar(50) DEFAULT NULL comment '姓名',
   `snumber` int DEFAULT NULL comment '学号',
+=======
+
+DROP TABLE IF EXISTS `file`;
+CREATE TABLE `file` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(50) DEFAULT NULL comment 'file name',
+  `file_size` int DEFAULT NULL comment 'file size',
+  `file_type` varchar(50) DEFAULT NULL comment 'file type',
+>>>>>>> 3373d57ba8aabcaaae71191c63880ca16e15e32c
   PRIMARY KEY (`id`)
 );
