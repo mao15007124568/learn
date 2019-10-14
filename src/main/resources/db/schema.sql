@@ -17,6 +17,12 @@ ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
 
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE `course` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `cname` varchar(50) DEFAULT NULL comment 'cname',
+  PRIMARY KEY (`id`)
+);
 
 DROP TABLE IF EXISTS `file`;
 CREATE TABLE `file` (

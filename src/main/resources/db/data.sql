@@ -12,4 +12,7 @@ INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.jpg', 'picture
 INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.doc', 'document', 2200);
 INSERT INTO `file` (`file_name`, file_type, file_size) VALUES ('1.txt', 'text', 2100);
 
+INSERT INTO `course` (id, cname) VALUES ('1','高数');
+INSERT INTO `course` (id, cname)  VALUES ('2','英语');
+INSERT INTO `course` (id, cname)  VALUES ('3','移动通信');
 COMMIT;
