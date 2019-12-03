@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.hubu.learn.entity.Llz;
+import edu.hubu.learn.entity.Result;
 import edu.hubu.learn.service.LlzService;
 
 @RestController
@@ -37,6 +38,16 @@ public class RestUserController {
     public Object modifyUser(@RequestBody Llz user) {
         llzService.modifyUser(user);
         return user;
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public Object deleteUser(@PathVariable("id") long id) {
+        try {
+            llzService.deleteUser(id);
+        } catch (Exception e) {
+            return new Result(false, e);
+        }
+        return new Result(true, null);
     }
 
 
