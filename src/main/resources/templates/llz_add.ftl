@@ -22,26 +22,31 @@
     <div class="row">
       <div class="col-md-4">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="/user/list">列表</a></li>
-          <li role="presentation"><a href="/user/add">新增</a></li>
-          <li role="presentation"><a href="/user/search">搜索</a></li>
+          <li role="presentation"><a href="/llz/list">列表</a></li>
+          <li role="presentation" class="active"><a href="/llz/add">新增</a></li>
+          <li role="presentation"><a href="/llz/search">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
-        <table class="table table-hover">
-          <thead>
-          <th>ID</th><th>名称</th><th>密码</th><th>头像</th><th>删除</th><th>修改</th><th>头像</th>
-          </thead>
-          <tbody>
-          <#list users as user>
-          <tr>
-          <td>${user.id}</td><td>${user.username}</td><td>${user.password}</td><td>${user.avatar}</td>
-          <td><a href="/llz/delete/${user.id}">删除</a></td>
-          <td><a href="/llz/modify/${user.id}">修改</a></td>
-          </tr>
-          </#list>
-          </tbody>
-        </table>
+        <form action="/llz/do_add">
+            <div class="form-group">
+                <label for="llzname">用户名</label>
+                <input type="text" class="form-control" id="llzname" name="llzname" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="llzpassword">密码</label>
+                <input type="password" class="form-control" id="llzpassword" name="llzpassword" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+              <label for="llzemail">邮箱</label>
+              <input type="text" class="form-control" id="llzemail" name="llzemail" placeholder="请输入邮箱">
+          </div>
+          <div class="form-group">
+            <label for="llzphone">电话</label>
+            <input type="text" class="form-control" id="llzphone" name="llzphone" placeholder="请输入电话号码">
+          </div>
+            <button type="submit" class="btn btn-default">确认</button>
+        </form>
       </div>
     </div>
   </div>

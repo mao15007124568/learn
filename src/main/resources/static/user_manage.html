@@ -1,0 +1,98 @@
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>user manage</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{ message}}
+        <table border="1">
+            <tr v-for="user in llzs">
+                <td>{{ user.id }}</td>
+                <td>{{ user.llzname }}</td>
+                <td>{{ user.llzpassword }}</td>
+                <td>{{ user.llzemail }}</td>
+                <td v-on:click="del(user.id)">删除</td>
+                <td v-on:click="edit(user)">修改</td>
+            </tr>
+        </table>
+        <div>
+            <label for="name">姓名</label>
+            <input id="name" v-model="current_user.username">
+            <label for="pass">密码</label>
+            <input id="pass" v-model="current_user.password">
+            <label for="email">邮箱</label>
+            <input id="email" v-model="current_user.avatar">
+            <label for="phone">电话</label>
+            <input id="phone" v-model="current_user.avatar">
+            <input v-on:click="apply()" type="button" value="提交">
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello, world',
+                llzs: [],
+                current_user: {}
+            },
+            created: function () {
+                this.list();
+            },
+            methods: {
+                list: function () {
+                    var vm = this
+                    vm.$http.get('/rest/llz/list').then(
+                        function (data) {
+                            vm.llzs = data.body
+                        }).catch(function (response) {
+                        console.log(response)
+                    })
+                },
+                del: function (id) {
+                    var vm = this
+                    vm.$http.delete('/rest/llz/' + id).then(function (data) {
+                        success = data.body.success
+                        if (success) {
+                            for (i = 0; i < vm.llzs.length; i++) {
+                                if (vm.llzs[i].id === id) {
+                                    vm.llzs.splice(i, 1)
+                                    break
+                                }
+                            }
+                        }
+                    }, function (response) {
+                        alert(response.body.error)
+                    })
+                },
+                edit: function (user) {
+                    var vm = this
+                    vm.current_user = user
+                },
+                apply: function () {
+                    var vm = this
+                    if (vm.current_user.id) {
+                        vm.$http.put('/rest/llz', vm.current_user).then(function (data) {
+                            alert("修改成功")
+                        }, function (response) {
+                            alert(response.body.error)
+                        })
+                    } else {
+                        vm.$http.post('/rest/llz', vm.current_user).then(function (data) {
+                            vm.llzs.push(data.body)
+                            alert("添加成功")
+                        }, function (response) {
+                            alert(response.body.error)
+                        })
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
